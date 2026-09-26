@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Secure Area</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="secure-wrap">
+    <h1>Access Granted</h1>
+    <p>Welcome MR @username.</p>
+    <button class="btn-logout" id="logoutBtn">Log out</button>
+  </main>
+
+  <script>
+    // Guard: if not authorized, send back to login
+    let authorized = false;
+    try { authorized = sessionStorage.getItem("isAuthorized") === "true"; } catch (e) {}
+
+    if (!authorized) {
+      window.location.replace("index.html");
+    }
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      try { sessionStorage.removeItem("isAuthorized"); } catch (e) {}
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

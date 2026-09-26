@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Riddle Password</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <h1 class="title">Riddle Password</h1>
+
+    <section class="calculator" aria-label="Calculator passcode entry">
+      <div class="screen" id="screen" role="status" aria-live="polite">
+        <div class="screen-inner" id="screenInner"></div>
+      </div>
+
+      <div class="keys" id="keys">
+        <button class="key key--fn"    data-action="clear"  aria-label="Clear all">C</button>
+        <button class="key key--fn"    data-action="back"   aria-label="Delete last character">⌫</button>
+        <button class="key key--decoy" data-action="decoy"  aria-label="Percent, not available">%</button>
+        <button class="key key--decoy" data-action="decoy"  aria-label="Divide, not available">÷</button>
+
+        <button class="key key--decoy" data-action="decoy"  aria-label="7, not available">7</button>
+        <button class="key key--decoy" data-action="decoy"  aria-label="8, not available">8</button>
+        <button class="key key--decoy" data-action="decoy"  aria-label="9, not available">9</button>
+        <button class="key key--decoy" data-action="decoy"  aria-label="Multiply, not available">×</button>
+
+        <button class="key"            data-action="digit" data-value="4" aria-label="4">4</button>
+        <button class="key"            data-action="digit" data-value="5" aria-label="5">5</button>
+        <button class="key key--decoy" data-action="decoy" aria-label="6, not available">6</button>
+        <button class="key key--op"    data-action="op" data-value="-" aria-label="Minus">−</button>
+
+        <button class="key"            data-action="digit" data-value="1" aria-label="1">1</button>
+        <button class="key"            data-action="digit" data-value="2" aria-label="2">2</button>
+        <button class="key"            data-action="digit" data-value="3" aria-label="3">3</button>
+        <button class="key key--op"    data-action="op" data-value="+" aria-label="Plus">+</button>
+
+        <button class="key key--decoy" data-action="decoy" aria-label="Plus minus, not available">±</button>
+        <button class="key"            data-action="digit" data-value="0" aria-label="0">0</button>
+        <button class="key key--decoy" data-action="decoy" aria-label="Decimal point, not available">.</button>
+        <button class="key key--eq"    data-action="submit" aria-label="Submit passcode">=</button>
+      </div>
+    </section>
+
+    <p class="hint" id="hint" hidden></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
